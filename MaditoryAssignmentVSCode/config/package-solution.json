@@ -1,0 +1,11 @@
+{
+  "solution": {
+    "name": "maditory-assignment-client-side-solution",
+    "id": "8c67fe58-1252-4a2e-9bf3-8f7114d842d2",
+    "version": "1.0.0.0",
+    "skipFeatureDeployment": true
+  },
+  "paths": {
+    "zippedPackage": "solution/maditory-assignment.sppkg"
+  }
+}

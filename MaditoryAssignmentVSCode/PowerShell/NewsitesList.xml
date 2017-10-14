@@ -1,0 +1,35 @@
+<pnp:ProvisioningTemplate ID="SPECIALTEAM" Version="1.0" 
+    xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
+    <pnp:SiteFields>  
+        <!--Hyperlink or Image-->
+        <Field ID="{f3277033-0393-46dd-8e23-2c6d78e13045}" Name="SiteURL" DisplayName="Site URL" Type="Text" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255"  Group="OD2" />
+        <!--User-->
+        <Field ID="{88fd9d80-5d7b-42b6-a778-16b6d059cdc4}" Name="Owner" Type="Text" DisplayName="Owner" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" MaxLength="255" Group="OD2"  StaticName="Owner"  />
+ 
+    </pnp:SiteFields>
+
+    <pnp:ContentTypes>
+        <pnp:ContentType ID="0x01002e555ca857994c7b963bd62bdd1ce764" Name="NewSiteContentType3" Group="OD2" Description="New Group Site Content Type">
+            <pnp:FieldRefs>
+                <!--Hyperlink or Image-->
+                <pnp:FieldRef ID="{f3277033-0393-46dd-8e23-2c6d78e13045}"  />
+                <!--User-->
+                <pnp:FieldRef ID="{88fd9d80-5d7b-42b6-a778-16b6d059cdc4}" />               
+            </pnp:FieldRefs>
+        </pnp:ContentType>
+    </pnp:ContentTypes>
+
+<pnp:Lists>
+    <pnp:ListInstance Title="NewSitesList"
+                     Description="New Group sites List"
+                     OnQuickLaunch="true"
+                     TemplateType="100"
+                     Url="Lists/newsites"
+                     EnableVersioning="false"
+                     RemoveExistingContentTypes="true">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x01002e555ca857994c7b963bd62bdd1ce764" Default="true"/>
+          </pnp:ContentTypeBindings>
+        </pnp:ListInstance>
+      </pnp:Lists>
+</pnp:ProvisioningTemplate>

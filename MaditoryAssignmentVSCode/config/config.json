@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/webparts/newSiteForm/NewSiteFormWebPart.js",
+      "manifest": "./src/webparts/newSiteForm/NewSiteFormWebPart.manifest.json",
+      "outputPath": "./dist/new-site-form.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "newSiteFormStrings": "webparts/newSiteForm/loc/{locale}.js"
+  }
+}

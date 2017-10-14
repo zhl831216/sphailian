@@ -1,0 +1,83 @@
+﻿<pnp:ProvisioningTemplate ID="ThemPark" Version="1.0" 
+    xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
+
+     <pnp:TermGroups>
+        <pnp:TermGroup ID="{933C68C6-84F4-494B-8E5C-AF31B7352461}" Name="HaiLianTermGroup">
+          <pnp:TermSets>
+            <pnp:TermSet Name="DocumentType" ID="{10BDC7D0-8DE3-4D21-9750-72743CF7CCD3}" Language="1033">
+              <pnp:Terms>
+                <pnp:Term Name="Type1" ID="{862ADE37-727C-4888-9057-B8D7767A3F82}" />
+                <pnp:Term Name="Type2" ID="{6350F168-E84C-4C6C-91A0-DA4AF1680433}" />
+                <pnp:Term Name="Type3" ID="{36184146-BEAF-4BBE-BCB4-59C4FDF3707B}" />
+                <pnp:Term Name="Type4" ID="{C0BAAC4E-C344-479E-9967-CB423AA9DC3C}" />
+              </pnp:Terms>
+            </pnp:TermSet>
+          </pnp:TermSets>
+          <pnp:Contributors>
+            <pnp:User Name="hailian@folkuniversitetetsp2016.onmicrosoft.com"/>
+          </pnp:Contributors>
+        </pnp:TermGroup>
+      </pnp:TermGroups>
+  
+    <pnp:SiteFields>
+      
+       <Field Type="User" DisplayName="Owner" List="UserInfo" Required="FALSE" EnforceUniqueValues="FALSE" ShowField="ImnName" UserSelectionMode="PeopleOnly" UserSelectionScope="0" Group="OD2" ID="{437D7AFE-7C80-4FB4-B235-342D748AB3CF}" StaticName="OD2_Owner" Name="OD2_Owner" Version="1" />
+
+        <Field Type="Choice" DisplayName="testchoice" Required="FALSE" EnforceUniqueValues="FALSE" Indexed="FALSE" Format="RadioButtons" FillInChoice="FALSE" Group="OD2" ID="{116A1BA6-8771-445F-9933-DFACB7AF71BD}" StaticName="OD2_Secrecy" Name="OD2_Secrecy" Version="2" CustomFormatter=""><CHOICES><CHOICE>secret</CHOICE><CHOICE>not secret</CHOICE></CHOICES></Field>
+
+        <Field ID="{ed3eeabd-cec0-44c5-88b1-37ddda363be3}" Type="Note" DisplayName="DocumentType" InternalName="OD2_DocumentType_0"  StaticName="OD2_DocumentType_0" Name="OD2_DocumentType_0" ShowInViewForms="FALSE" Required="FALSE" Hidden="TRUE" CanToggleHidden="TRUE" />
+        <Field ID="{fe22443d-17b2-4055-bec1-0eda3d5c5735}" Type="TaxonomyFieldType" Name="OD2_DocumentType" InternalName="OD2_DocumentType"  DisplayName="DocumentType" Group="OD2" ShowField="Term1033" AllowDeletion="TRUE" Required="TRUE">
+      <Customization>
+        <ArrayOfProperty>
+          <Property>
+            <Name>SspId</Name>
+            <Value xmlns:q1="http://www.w3.org/2001/XMLSchema" p4:type="q1:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">{62c1d89bd2c040c18ad40a9d0d678c13}</Value>
+          </Property>
+          <Property>
+            <Name>TermSetId</Name>
+            <Value xmlns:q2="http://www.w3.org/2001/XMLSchema" p4:type="q2:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">10BDC7D0-8DE3-4D21-9750-72743CF7CCD3</Value>
+          </Property>
+          <Property>
+            <Name>TextField</Name>
+            <Value xmlns:q6="http://www.w3.org/2001/XMLSchema" p4:type="q6:string" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">ed3eeabd-cec0-44c5-88b1-37ddda363be3</Value>
+          </Property>
+          <Property>
+            <Name>IsPathRendered</Name>
+            <Value xmlns:q7="http://www.w3.org/2001/XMLSchema" p4:type="q7:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+          </Property>
+          <Property>
+            <Name>IsKeyword</Name>
+            <Value xmlns:q8="http://www.w3.org/2001/XMLSchema" p4:type="q8:boolean" xmlns:p4="http://www.w3.org/2001/XMLSchema-instance">false</Value>
+          </Property>
+        </ArrayOfProperty>
+      </Customization>
+    </Field>
+    </pnp:SiteFields>-->
+
+    <pnp:ContentTypes>
+        <pnp:ContentType ID="0x0101000CE83A6B29214CD7A7A149EB60BC3F5D" Name="important document content type" Group="OD2" Description="assignment Content Type">
+            <pnp:FieldRefs>
+                <!-- user -->
+                <pnp:FieldRef ID="{437D7AFE-7C80-4FB4-B235-342D748AB3CF}"  />
+                <!-- choice -->
+                <pnp:FieldRef ID="{116A1BA6-8771-445F-9933-DFACB7AF71BD}" />
+                <!-- texomonomy -->
+                <pnp:FieldRef ID="{fe22443d-17b2-4055-bec1-0eda3d5c5735}" />
+            </pnp:FieldRefs>
+        </pnp:ContentType>
+    </pnp:ContentTypes>
+
+<pnp:Lists>
+    <pnp:ListInstance Title="Important Document Library"
+                     Description="Important Document Library"
+                     OnQuickLaunch="true"
+                     TemplateType="100"
+                     Url="Lists/ImportantDocumentLibrary"
+                     EnableVersioning="false"
+                     RemoveExistingContentTypes="true">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x0101000CE83A6B29214CD7A7A149EB60BC3F5D" Default="true"/>
+          </pnp:ContentTypeBindings>          
+        </pnp:ListInstance>
+      </pnp:Lists>
+</pnp:ProvisioningTemplate>
